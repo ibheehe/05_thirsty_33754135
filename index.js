@@ -1,6 +1,7 @@
 // Setup express and ejs
 var express = require ('express')
 var ejs = require('ejs')
+const path = require('path')
 
 // Create the express application object
 const app = express()
@@ -11,6 +12,9 @@ app.set('view engine', 'ejs');
 
 // Set up the body parser 
 app.use(express.urlencoded({ extended: true })); 
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Load the route handlers
 const mainRoutes = require("./routes/main");  
