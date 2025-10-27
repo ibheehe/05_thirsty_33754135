@@ -8,5 +8,16 @@
   <body>
     <h1>about the <%=shopName%> Shop</h1>
     <p>We sell all sorts of drinks</p>
+<h2>Our Shop Locations</h2>
+<ul>
+    <% locations.forEach(function(shop) { %>
+        <li>
+            <strong><%= shop.name %></strong><br>
+            Manager: <%= shop.manager %><br>
+            Address: <%= shop.address %>
+        </li>
+    <% }); %>
+</ul>
+
   </body>
 </html>

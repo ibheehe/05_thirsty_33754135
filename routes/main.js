@@ -3,9 +3,29 @@ const express = require("express");
 const router = express.Router();
 
 // Define our data
-var shopData = {shopName: "Drink Guzzlers", 
-                productCategories:["Beer", "Wine", "Soft Drinks", "Hot Drinks"]}
-
+var shopData = {
+    shopName: "Drink Guzzlers",
+    productCategories: ["Beer", "Wine", "Soft Drinks", "Hot Drinks"],
+    
+    // Add shop locations
+    locations: [
+        {
+            name: "Goldsmiths store",
+            manager: "Gold, Smith",
+            address: "Goldsmihts University"
+        },
+        {
+            name: "Elephant and Castle Store",
+            manager: "frank, Castle",
+            address: "castle square"
+        },
+        {
+            name: "Oxford branch",
+            manager: "Ronda, Shawarma",
+            address: "Oxford street"
+        }
+    ]
+};
 // Handle the main routes
 router.get("/", (req, res) => {
     res.render("index.ejs", shopData)
